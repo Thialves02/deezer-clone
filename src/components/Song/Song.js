@@ -8,22 +8,16 @@ import {Howl, Howler} from 'howler';
 
 export default function Song({cover,title,artist,duration,fullSong,preview}) {
     const [click, setClick] = useState(false)
-    const [playing,setPlaying] = useState(false)
-
-    /* const handleClick = () =>{
-        setClick(!click)
-        console.log('a')
-    } */
-
-    let audio = new Audio(preview)
+    const [audio,setAudio] = useState(new Audio(preview))
 
     const start = () => {
-        if (click){
+        if (click == false){
             audio.play()
         }
-        else{
+        if (click == true){
             audio.pause()
         }
+
         
         setClick(!click)
     }

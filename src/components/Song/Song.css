@@ -82,10 +82,3 @@
 .container-song h3{
     font-size:15px;
 }
-
-.container-musics audio{
-    position:absolute;
-    bottom: 90px;
-    left: 15px;
-    opacity: 1
-}
