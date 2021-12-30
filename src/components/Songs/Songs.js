@@ -12,7 +12,6 @@ export default function Songs() {
             );
             const data = await response.json()
             setSongs(data.tracks.data)
-            console.log(data.tracks.data);
         }
         loadSongs();
     },[])
@@ -31,8 +30,12 @@ export default function Songs() {
                 preview={song.preview}
                 />
             ))}
-            <Song/>
             </div>
+            {songs.length<= 0 &&
+            <div>
+                Loading...
+            </div>
+            }
         </div>
     )
 }
