@@ -1,4 +1,9 @@
 .container-songs{
-    margin: 50px;
+    margin: 50px 0 25px 50px;
+}
+
+.container-musics{
     display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

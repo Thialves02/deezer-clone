@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Api } from '../../Api/Api'
 import Song from '../Song/Song'
 import './Songs.css'
 
@@ -20,13 +19,20 @@ export default function Songs() {
     return (
         <div className='container-songs'>
             <h1>Popular songs</h1>
-            {/* {songs.map((song,index) =>(
+            <div className='container-musics'>
+            {songs.map((song,index) =>(
                 <Song
                 key={index}
-                song={song}
+                cover={song.album.cover_big}
+                title={song.title}
+                artist={song.artist.name}
+                duration={song.duration}
+                fullSong={song.link}
+                preview={song.preview}
                 />
-            ))} */}
+            ))}
             <Song/>
+            </div>
         </div>
     )
 }

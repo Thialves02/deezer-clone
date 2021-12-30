@@ -1,17 +1,74 @@
 .container-song{
-    background-color: aqua;
     margin:50px 25px 0 25px;
+    position: relative;
+}
+
+.container-song:hover .fav,
+.container-song:hover .full {
+    opacity: 1
 }
 
 .container-song img{ 
     width:250px;
     height:250px;
     border-radius:15px;
-    margin-bottom:10px;
+}
+
+.container-song 
+.play,
+.fav,
+.full{
+    position:absolute;
+    height:45px;
+    width:45px;
+    border-radius:50%;
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container-song .fav, .full{
+    transition: .5s;
+    opacity: 0;
+}
+
+.container-song .play{
+    bottom: 90px;
+    left: 15px;
+}
+
+.container-song .fav{
+    bottom: 90px;
+    left: 70px;
+}
+
+.container-song .full{
+    bottom: 90px;
+    left:125px;
+}
+
+.container-song .play img{
+    width:35px;
+    height:35px;
+}
+
+.container-song .fav img{
+    width:30px;
+    height:30px;
+    border-radius: 0;
+}
+
+.container-song .full img{
+    width:30px;
+    height:30px;
+    border-radius: 0;
 }
 
 .container-song h1{
     font-size:25px;
+    margin-top:10px;
 }
 
 .container-song h2{
