@@ -1,6 +1,8 @@
 .container-song{
     margin:50px 25px 0 25px;
     position: relative;
+    background-color: aqua;
+   
 }
 
 .container-song:hover .fav,

@@ -8,13 +8,16 @@ import full from '../../assets/images/full.png'
 export default function Song({cover,title,artist,duration,fullSong,preview}) {
     
     const [click, setClick] = useState(false)
-    const [audio,setAudio] = useState(new Audio(preview))
-
+    /* const [audio, setAudio] = useState(new Audio(preview)) */
+    const audio = new Audio(preview)
+    
+    console.log(preview)
     const start = () => {
         if (!click){
             audio.play()
         }else{
             audio.pause()
+            console.log('aa')
         }  
         setClick(!click)
     }

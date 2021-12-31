@@ -11,11 +11,12 @@ export default function Menu() {
 
         const searchSong = e.target.searchSong.value
         const response = await fetch (
-            `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/${searchSong}`
+            `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${searchSong}`
         )
         
         const body = await response.json()
-        setSongs(body.tracks.data)
+        
+        setSongs(body.data)
         
     }
     return (

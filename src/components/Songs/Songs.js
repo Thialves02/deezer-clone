@@ -6,7 +6,7 @@ import { useContext } from 'react'
 export default function Songs() {
     
     const { songs } = useContext(Context)
-    console.log(songs)
+
     return (
         <div className='container-songs'>
             <h1>Popular songs</h1>

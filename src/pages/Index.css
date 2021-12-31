@@ -1,6 +1,5 @@
-.container-Home-Menus{
-    display: flex;
-}
-.container-menu-songs{
-    width: 100%;
+.song{
+    position: absolute;
+    top: 75px;
+    left: 225px;
 }

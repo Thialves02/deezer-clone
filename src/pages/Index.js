@@ -6,16 +6,8 @@ import './Index.css'
 
 export default function Index() {
     return (
-        <div className='container-Home'>
-            <div className='container-Home-Menus'>
-                
-                <div className='container-menu-songs'>
-                    
-                    <Songs/>
-                </div>
-                
-            </div>
-            
+        <div className="song">
+            <Songs/>
         </div>
     )
 }
