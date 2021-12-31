@@ -8,9 +8,9 @@ export default function Index() {
     return (
         <div className='container-Home'>
             <div className='container-Home-Menus'>
-                <LateralMenu/>
+                
                 <div className='container-menu-songs'>
-                    <Menu/>
+                    
                     <Songs/>
                 </div>
                 

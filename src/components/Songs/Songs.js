@@ -1,20 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Song from '../Song/Song'
 import './Songs.css'
-
+import { Context } from '../../context/CtxApp'
+import { useContext } from 'react'
 export default function Songs() {
-    const [songs, setSongs] = useState([])
-
-    useEffect(()=>{
-        const loadSongs = async () => {
-            const response = await fetch(
-                'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0'
-            );
-            const data = await response.json()
-            setSongs(data.tracks.data)
-        }
-        loadSongs();
-    },[])
+    
+    const { songs } = useContext(Context)
+    console.log(songs)
     return (
         <div className='container-songs'>
             <h1>Popular songs</h1>
