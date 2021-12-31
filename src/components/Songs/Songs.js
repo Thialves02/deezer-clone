@@ -9,7 +9,7 @@ export default function Songs() {
 
     return (
         <div className='container-songs'>
-            <h1>Popular songs</h1>
+            
             <div className='container-musics'>
             {songs.map((song,index) =>(
                 <Song

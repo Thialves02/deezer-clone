@@ -8,8 +8,13 @@
     border-right: 1px solid #DFDFDF;
 }
 
-.container-lateralMenu img{
-    width:65%;
+.container-lateralMenu a{
+    text-decoration: none;
+    color: black;
+}
+
+.container-lateralMenu a img{
+    width:100%;
     height:30px;
     margin: 20px 0;
     cursor: pointer;
