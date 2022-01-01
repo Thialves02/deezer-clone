@@ -3,7 +3,7 @@ import './Menu.css'
 import { useContext } from "react"
 import { Context } from "../../context/CtxApp"
 import Promo from '../Promo/Promo'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './LateralMenu.css'
 import menu from '../../assets/images/menu.png'
 import logoTop from '../../assets/images/logoTop.png'
@@ -14,7 +14,8 @@ import searchSong from '../../assets/images/search.png'
 export default function Menu() {
     const { setSongs } = useContext(Context)
     const [open, setOpen ] = useState(false)
-
+    const history = useHistory()
+    
     const search = async (e) =>{
         e.preventDefault()
 
@@ -22,7 +23,7 @@ export default function Menu() {
         const response = await fetch (
             `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${searchSong}`
         )
-        
+        history.push('/')
         const body = await response.json()
         setSongs(body.data)
     }
