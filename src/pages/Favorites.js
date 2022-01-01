@@ -1,11 +1,14 @@
 import React from 'react'
 import Songs from '../components/Songs/Songs'
+import { Context } from '../context/CtxApp'
+import { useContext } from 'react'
+import FavoriteSongs from '../components/FavoriteSongs/FavoriteSongs'
 
 export default function Favorites() {
     return (
         <div className="song">
-            <h1>Favorites</h1>
-            <Songs/>
+            <h1 className='songs-title'>Favorites</h1>
+            <FavoriteSongs/>
         </div>
     )
 }
