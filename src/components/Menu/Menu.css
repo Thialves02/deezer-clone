@@ -23,12 +23,21 @@
     margin: 0 20px;
 }
 
+.container-Menu .Menu-Search .logoTop{
+    display:none;
+    width:60px;
+    height:45px;
+    margin: 0 5px;
+    cursor:pointer;
+    outline:none;
+}
+
 .container-Menu .Menu-Search input{
     font-size: 20px;
     border: none;
     font-weight: 200;
     outline:none;
-    background-color: transparent;
+    width: 100%;
 }
 
 input:-webkit-autofill {
@@ -41,10 +50,11 @@ input:-webkit-autofill {
     margin: 0 50px;
 }
 
-.Menu-infos .bell{
+.Menu-infos .menu{
+    display: none;
     width:25px;
     height:25px;
-    margin-right: 25px;
+    margin-left: 50px;
     cursor: pointer;
 }
 
@@ -57,5 +67,17 @@ input:-webkit-autofill {
 @media only screen and (max-width: 900px) {
     .container-Menu .Menu-Search{
         margin-left: 0;
+    }
+    .Menu-infos .menu{
+        display: block;
+    }
+    .container-Menu .Menu-Search .logoTop{
+        display:block;
+    }
+    .container-Menu .Menu-infos{
+        margin: 0 25px;
+    }
+    .container-Menu .Menu-Search input{
+        width: 120%;
     }
 }

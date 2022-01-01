@@ -1,4 +1,5 @@
-.container-lateralMenu{
+.container-lateralMenu,
+.container-lateralMenuOpen{
     position: fixed;
     width:250px;
     height:100vh;
@@ -8,21 +9,25 @@
     align-items: center;
     border-right: 1px solid #DFDFDF;
     z-index: 9999;
+    transition: 1.5s
 }
 
-.container-lateralMenu a{
+.container-lateralMenu a,
+.container-lateralMenuOpen a{
     text-decoration: none;
     color: black;
 }
 
-.container-lateralMenu a img{
+.container-lateralMenu a img,
+.container-lateralMenuOpen a img{
     width:100%;
     height:30px;
     margin: 20px 0;
     cursor: pointer;
 }
 
-.container-lateralMenu .favorite{
+.container-lateralMenu .favorite,
+.container-lateralMenuOpen .favorite{
     display:flex;
     align-items: center;
     cursor: pointer;
@@ -30,11 +35,13 @@
     padding-top: 5px;
 }
 
-.container-lateralMenu .favorite:hover{
+.container-lateralMenu .favorite:hover,
+.container-lateralMenuOpen .favorite:hover{
     transform: scale(1.1);
 }
 
-.container-lateralMenu .favorite img {
+.container-lateralMenu .favorite img,
+.container-lateralMenuOpen .favorite img {
     height:20px;
     width:20px;
     margin-right: 10px;
@@ -42,6 +49,20 @@
 
 @media only screen and (max-width: 900px) {
     .container-lateralMenu{
+        margin-top: 70px;
+        margin-left: -1000px;
+    }
+
+    .container-lateralMenuOpen{
+        width:100%;
+        margin-top: 70px;
+        margin-left: 0px;
+    }
+    .container-lateralMenu a .logo{
         display:none;
     }
+    .container-lateralMenuOpen a .logo{
+        display:none;
+    }
+
 }

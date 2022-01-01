@@ -1,14 +1,20 @@
-import React, { useEffect } from 'react'
+import React, {  useState } from 'react'
 import './Menu.css'
 import { useContext } from "react"
 import { Context } from "../../context/CtxApp"
 import Promo from '../Promo/Promo'
 import { Link } from 'react-router-dom'
 import './LateralMenu.css'
+import menu from '../../assets/images/menu.png'
+import logoTop from '../../assets/images/logoTop.png'
+import logo from '../../assets/images/logo.png'
+import fav from '../../assets/images/favDelete.png'
+import searchSong from '../../assets/images/search.png'
 
 export default function Menu() {
     const { setSongs } = useContext(Context)
-    
+    const [open, setOpen ] = useState(false)
+
     const search = async (e) =>{
         e.preventDefault()
 
@@ -20,30 +26,41 @@ export default function Menu() {
         const body = await response.json()
         setSongs(body.data)
     }
+
+    const Menu = () =>{
+        setOpen(!open)
+        console.log('s')
+    }
+    const closeMenu = () =>{
+        setOpen(false)
+    }
     return (
         <div className='container-menus'>
-            <div className="container-lateralMenu">
+            <div className={!open ? 'container-lateralMenu' : 'container-lateralMenuOpen'}>
                 <Link to="/">
-                    <img src="https://logodownload.org/wp-content/uploads/2018/03/deezer-logo-8.png" alt='Logo'></img>
+                    <img src={logo} alt='Logo' className='logo'></img>
                 </Link>
                 <Promo/>
                 <Link to='favorites'>
-                <div className='favorite'>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Heart_font_awesome.svg/1200px-Heart_font_awesome.svg.png" alt='Favorites'/>
+                <div className='favorite' onClick={closeMenu}>
+                    <img src={fav} alt='Favorites'/>
                     <p>Favorites</p>
                 </div>
                 </Link>
             </div>
             <div className='container-Menu'>
                 <div className='Menu-Search'>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Search_font_awesome.svg/1024px-Search_font_awesome.svg.png'/>
+                    <Link to='/'>
+                        <img src={logoTop} className='logoTop' onClick={closeMenu}/>
+                    </Link>
+                    <img src={searchSong}/>
                     <form onSubmit={search}>
                         <input type="text" placeholder="Search" name='searchSong'/>
                     </form>
                 </div>
-                <div className='Menu-infos'>
-                    {/* <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Bell_alt_font_awesome.svg/1024px-Bell_alt_font_awesome.svg.png' className='bell'/> */}
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Font_Awesome_5_solid_user-circle.svg/1982px-Font_Awesome_5_solid_user-circle.svg.png' className='profile'/>
+                <div className='Menu-infos'>           
+                    {/* <img src={profile} className='profile' /> */}
+                    <img src={menu} className='menu' onClick={Menu}/>
                 </div>
             </div>
         </div>
