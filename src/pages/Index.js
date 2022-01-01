@@ -7,7 +7,7 @@ import './Index.css'
 export default function Index() {
     return (
         <div className="song">
-            <h1>Popular songs</h1>
+            <h1 className='songs-title'>Popular songs</h1>
             <Songs/>
         </div>
     )

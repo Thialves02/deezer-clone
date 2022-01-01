@@ -1,5 +1,9 @@
 .song{
     position: absolute;
     top: 100px;
-    left: 250px;
+    left: 210px;
+}
+
+.song .songs-title{
+    margin-left: 75px;
 }

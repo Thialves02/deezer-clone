@@ -1,4 +1,5 @@
 .container-menus{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    width: 100%;
 }
