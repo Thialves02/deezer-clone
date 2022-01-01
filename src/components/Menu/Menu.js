@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Menu.css'
 import { useContext } from "react"
 import { Context } from "../../context/CtxApp"
 
 export default function Menu() {
     const { setSongs } = useContext(Context)
-
+    
     const search = async (e) =>{
         e.preventDefault()
 
@@ -15,9 +15,7 @@ export default function Menu() {
         )
         
         const body = await response.json()
-        
         setSongs(body.data)
-        
     }
     return (
         <div className='container-Menu'>

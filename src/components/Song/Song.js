@@ -9,15 +9,14 @@ export default function Song({cover,title,artist,duration,fullSong,preview}) {
     
     const [click, setClick] = useState(false)
     /* const [audio, setAudio] = useState(new Audio(preview)) */
+    const [playing, setPlaying] = useState(false)
     const audio = new Audio(preview)
     
-    console.log(preview)
     const start = () => {
         if (!click){
             audio.play()
         }else{
             audio.pause()
-            console.log('aa')
         }  
         setClick(!click)
     }

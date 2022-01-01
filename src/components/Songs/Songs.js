@@ -5,8 +5,21 @@ import { Context } from '../../context/CtxApp'
 import { useContext } from 'react'
 export default function Songs() {
     
-    const { songs } = useContext(Context)
+    const { songs, setSongs } = useContext(Context)
 
+    if (songs.length == 0){
+        const getSongs = async () =>{
+            const response = await fetch (
+                `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0`
+            )
+            
+            const body = await response.json()
+            setSongs(body.tracks.data)
+        }
+        getSongs()
+    }
+    
+    
     return (
         <div className='container-songs'>
             
