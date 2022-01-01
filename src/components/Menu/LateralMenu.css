@@ -1,0 +1,47 @@
+.container-lateralMenu{
+    position: fixed;
+    width:250px;
+    height:100vh;
+    background-color: rgb(255, 255, 255);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #DFDFDF;
+    z-index: 9999;
+}
+
+.container-lateralMenu a{
+    text-decoration: none;
+    color: black;
+}
+
+.container-lateralMenu a img{
+    width:100%;
+    height:30px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.container-lateralMenu .favorite{
+    display:flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s;
+    padding-top: 5px;
+}
+
+.container-lateralMenu .favorite:hover{
+    transform: scale(1.1);
+}
+
+.container-lateralMenu .favorite img {
+    height:20px;
+    width:20px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    .container-lateralMenu{
+        display:none;
+    }
+}

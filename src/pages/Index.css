@@ -7,3 +7,12 @@
 .song .songs-title{
     margin-left: 75px;
 }
+
+@media only screen and (max-width: 900px) {
+    .song .songs-title{
+        margin-left: 25px;
+    }
+    .song{
+        left: 0px;
+    }
+}

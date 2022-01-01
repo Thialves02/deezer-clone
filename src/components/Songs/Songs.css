@@ -7,3 +7,13 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+@media only screen and (max-width: 900px) {
+    .container-Menu .Menu-Search{
+        margin-left: 0;
+    }
+    .container-songs{
+        margin-bottom: 50px;
+        margin-left: 0;
+    }
+}
