@@ -20,21 +20,32 @@ export default function Menu() {
         e.preventDefault()
 
         const searchSong = e.target.searchSong.value
-        const response = await fetch (
-            `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${searchSong}`
-        )
-        history.push('/')
-        const body = await response.json()
-        setSongs(body.data)
+        if (searchSong == ''){
+            const response = await fetch (
+                `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0`
+            )
+            history.push('/')
+            const body = await response.json()
+            setSongs(body.tracks.data)
+            
+        }else{
+            const response = await fetch (
+                `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${searchSong}`
+            )
+            history.push('/')
+            const body = await response.json()
+            setSongs(body.data)
+        }
+        
     }
 
     const Menu = () =>{
         setOpen(!open)
-        console.log('s')
     }
     const closeMenu = () =>{
         setOpen(false)
     }
+
     return (
         <div className='container-menus'>
             <div className={!open ? 'container-lateralMenu' : 'container-lateralMenuOpen'}>
