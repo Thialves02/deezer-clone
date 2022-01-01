@@ -51,6 +51,11 @@
     left: 70px;
 }
 
+.container-song .fav button{
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .container-song .full{
     bottom: 90px;
     left:125px;

@@ -47,7 +47,10 @@ export default function Song({cover,title,artist,duration,fullSong,preview}) {
                 <img src={click ? pause : play} onClick={start} />
             </div>
             <div className="fav" >
-                <img src={fav}/>
+                {/* <img src={fav}/> */}
+                <form onSubmit={favorite}>
+                    <button type="submit"><img src={fav}/></button>
+                </form>
             </div>
             <a href={fullSong} target="_blank">
                 <div className="full">
@@ -57,9 +60,7 @@ export default function Song({cover,title,artist,duration,fullSong,preview}) {
             <h1>{title}</h1>
             <h2>by {artist}</h2>
             <h3>Duration {duration}</h3>
-            <form onSubmit={favorite}>
-                <button type="submit">ENVIAR</button>
-            </form>
+            
         </div>
         </>
     )
