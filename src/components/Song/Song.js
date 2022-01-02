@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useRef, useState } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import './Song.css'
 import play from '../../assets/images/play.png'
 import pause from '../../assets/images/pause.png'
@@ -9,19 +9,14 @@ import { Context } from '../../context/CtxApp'
 export default function Song({cover,title,artist,duration,fullSong,preview}) {
     const {favs, setFavs} = useContext(Context)
     const [click, setClick] = useState(false)
-    /* const [audio, setAudio] = useState(new Audio(preview)) */
-    const [playing, setPlaying] = useState(false)
 
-    /* const audioRef = useRef(new Audio(preview)); */
     const audio = useMemo(() => new Audio(preview),[preview])
-    console.log()
+
     const start = () => {
         if (!click){
             audio.play()
-            /* audioRef.current.play() */
         }else{
             audio.pause()
-            /* audioRef.current.pause() */
         }  
         setClick(!click)
     }
@@ -38,32 +33,28 @@ export default function Song({cover,title,artist,duration,fullSong,preview}) {
                 preview:preview
             }
         ])
-        console.log(favs)
-
     }
 
     return (
         <>
         <div className="container-song">
-            <img src={cover} />
+            <img src={cover} alt={title}/>
             <div className={click ? 'pause' : 'play'} >
-                <img src={click ? pause : play} onClick={start} />
+                <img src={click ? pause : play} onClick={start} alt='play and pause'/>
             </div>
             <div className="fav" >
-                {/* <img src={fav}/> */}
                 <form onSubmit={favorite}>
-                    <button type="submit"><img src={fav}/></button>
+                    <button type="submit"><img src={fav} alt='fav button'/></button>
                 </form>
             </div>
-            <a href={fullSong} target="_blank">
+            <a href={fullSong} target="_blank" without rel="noreferrer">
                 <div className="full">
-                    <img src={full}/>
+                    <img src={full} alt='full song'/>
                 </div>
             </a>
             <h1>{title}</h1>
             <h2>by {artist}</h2>
-            <h3>Duration {duration}</h3>
-            
+            <h3>Duration {duration}</h3>   
         </div>
         </>
     )

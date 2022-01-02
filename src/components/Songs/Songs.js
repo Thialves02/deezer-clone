@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Song from '../Song/Song'
 import './Songs.css'
 import { Context } from '../../context/CtxApp'
@@ -7,7 +7,7 @@ export default function Songs() {
     
     const { songs, setSongs } = useContext(Context)
 
-    if (songs.length == 0){
+    if (songs.length === 0){
         const getSongs = async () =>{
             const response = await fetch (
                 `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0`
@@ -18,7 +18,6 @@ export default function Songs() {
         }
         getSongs()
     }
-    
     
     return (
         <div className='container-songs'>

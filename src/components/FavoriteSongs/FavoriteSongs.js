@@ -1,11 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { Context } from '../../context/CtxApp'
 import './FavoriteSongs.css'
-import play from '../../assets/images/play.png'
-import pause from '../../assets/images/pause.png'
 import favDelete from '../../assets/images/favDelete.png'
 import full from '../../assets/images/full.png'
-import Favorite from '../Favorite/Favorite'
+
 
 export default function FavoriteSongs() {
     const { favs, setFavs } = useContext(Context)
@@ -21,13 +19,13 @@ export default function FavoriteSongs() {
             <div className='container-musics'>
                 {favs.map((favs,index)=>(
                     <div className="container-song">
-                    <img src={favs.cover} />
+                    <img src={favs.cover} alt={favs.title}/>
                     <div className="favs-fav" >
-                        <button type="submit" onClick={() => Delete(index)}><img src={favDelete}/></button>
+                        <button type="submit" onClick={() => Delete(index)}><img src={favDelete} alt='delete'/></button>
                     </div>
-                    <a href={favs.link} target="_blank">
+                    <a href={favs.link} target="_blank" without rel="noreferrer">
                         <div className="favs-full">
-                            <img src={full}/>
+                            <img src={full} alt='full song'/>
                         </div>
                     </a>
                     <h1>{favs.title}</h1>

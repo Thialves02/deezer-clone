@@ -20,7 +20,7 @@ export default function Menu() {
         e.preventDefault()
 
         const searchSong = e.target.searchSong.value
-        if (searchSong == ''){
+        if (searchSong === ''){
             const response = await fetch (
                 `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0`
             )
@@ -63,16 +63,15 @@ export default function Menu() {
             <div className='container-Menu'>
                 <div className='Menu-Search'>
                     <Link to='/'>
-                        <img src={logoTop} className='logoTop' onClick={closeMenu}/>
+                        <img src={logoTop} className='logoTop' onClick={closeMenu} alt='logo top'/>
                     </Link>
-                    <img src={searchSong}/>
+                    <img src={searchSong} alt='search song'/>
                     <form onSubmit={search}>
                         <input type="text" placeholder="Search" name='searchSong'/>
                     </form>
                 </div>
                 <div className='Menu-infos'>           
-                    {/* <img src={profile} className='profile' /> */}
-                    <img src={menu} className='menu' onClick={Menu}/>
+                    <img src={menu} className='menu' onClick={Menu} alt='menu'/>
                 </div>
             </div>
         </div>
