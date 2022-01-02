@@ -3,7 +3,7 @@ import { createContext } from 'react'
 
 const Context = createContext()
 
-export default function CtxApp({children,preview}) {
+export default function CtxApp({children}) {
     const [songs, setSongs] = useState([])
     const [favs,setFavs] = useState([])
 
