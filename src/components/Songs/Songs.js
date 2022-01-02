@@ -10,7 +10,7 @@ export default function Songs() {
     if (songs.length === 0){
         const getSongs = async () =>{
             const response = await fetch (
-                `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0`
+                `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/2`
             )
             
             const body = await response.json()

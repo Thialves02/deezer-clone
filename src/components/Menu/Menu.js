@@ -22,7 +22,7 @@ export default function Menu() {
         const searchSong = e.target.searchSong.value
         if (searchSong === ''){
             const response = await fetch (
-                `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0`
+                `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/2`
             )
             history.push('/')
             const body = await response.json()
