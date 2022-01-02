@@ -21,8 +21,13 @@ export default function Song({cover,title,artist,duration,fullSong,preview}) {
         setClick(!click)
     }
 
+    const values = favs.filter(function (a) {
+        return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
+    }, Object.create(null))
+
     const favorite = (e) => {
         e.preventDefault()
+
         setFavs([
             ...favs,{
                 cover:cover,
@@ -31,8 +36,12 @@ export default function Song({cover,title,artist,duration,fullSong,preview}) {
                 duration:duration,
                 link:fullSong,
                 preview:preview
-            }
+            }   
         ])
+    }
+    
+    if(values.length < favs.length){
+        setFavs(values)
     }
 
     return (

@@ -6,14 +6,14 @@ import full from '../../assets/images/full.png'
 
 
 export default function FavoriteSongs() {
-    const { favs, setFavs } = useContext(Context)
+    const { favs, setFavs} = useContext(Context)
 
     const Delete = (index) => {
         setFavs(favs.filter((song,indexSong)=>
         index!== indexSong
         ))
-        
     }
+    
     return (
         <div className='container-songs'>
             <div className='container-musics'>
