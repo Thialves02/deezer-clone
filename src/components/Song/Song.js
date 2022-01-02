@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useMemo, useRef, useState } from 'react'
 import './Song.css'
 import play from '../../assets/images/play.png'
 import pause from '../../assets/images/pause.png'
@@ -7,18 +7,21 @@ import full from '../../assets/images/full.png'
 import { Context } from '../../context/CtxApp'
 
 export default function Song({cover,title,artist,duration,fullSong,preview}) {
-    
     const {favs, setFavs} = useContext(Context)
     const [click, setClick] = useState(false)
     /* const [audio, setAudio] = useState(new Audio(preview)) */
     const [playing, setPlaying] = useState(false)
-    const audio = new Audio(preview)
-    
+
+    /* const audioRef = useRef(new Audio(preview)); */
+    const audio = useMemo(() => new Audio(preview),[preview])
+    console.log()
     const start = () => {
         if (!click){
             audio.play()
+            /* audioRef.current.play() */
         }else{
             audio.pause()
+            /* audioRef.current.pause() */
         }  
         setClick(!click)
     }

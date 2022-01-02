@@ -1,0 +1,58 @@
+.favorite-subtitle{
+    color: rgb(104, 104, 104);
+    margin:25px 0 0 50px
+}
+
+.container-song .favs-fav, .favs-full{
+    transition: .5s;
+    opacity: 0;
+}
+
+.container-song:hover .favs-fav,
+.container-song:hover .favs-full {
+    opacity: 1
+}
+
+.container-song 
+.favs-fav,
+.favs-full{
+    position:absolute;
+    height:45px;
+    width:45px;
+    border-radius:50%;
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.container-song .favs-fav{
+    bottom: 90px;
+    left: 15px;
+}
+
+.container-song .favs-full{
+    bottom: 90px;
+    left: 70px;
+}
+
+.container-song .favs-fav img,
+.container-song .favs-full img{
+    width:25px;
+    height:25px;
+    border-radius: 0;
+}
+
+.container-song .favs-fav button{
+    background-color: transparent;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+    .container-song .favs-fav,
+    .container-song .favs-full {
+        opacity: 1
+    }
+}
