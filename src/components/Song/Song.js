@@ -9,7 +9,7 @@ import { Context } from '../../context/CtxApp'
 export default function Song({cover,title,artist,duration,fullSong,preview}) {
     const {favs, setFavs} = useContext(Context)
     const [click, setClick] = useState(false)
-
+    
     const audio = useMemo(() => new Audio(preview),[preview])
 
     const start = () => {
@@ -43,6 +43,15 @@ export default function Song({cover,title,artist,duration,fullSong,preview}) {
     if(values.length < favs.length){
         setFavs(values)
     }
+    
+    var minutes = Math.floor(duration / 60)
+    var seconds = duration - minutes * 60;
+
+    function str_pad_left(string,pad,length) {
+        return (new Array(length+1).join(pad)+string).slice(-length);
+    }
+
+    var finalTime = str_pad_left(minutes,'0',2)+':'+str_pad_left(seconds,'0',2);
 
     return (
         <>
@@ -63,7 +72,7 @@ export default function Song({cover,title,artist,duration,fullSong,preview}) {
             </a>
             <h1>{title}</h1>
             <h2>by {artist}</h2>
-            <h3>Duration {duration}</h3>   
+            <h3>Duration {finalTime}</h3>   
         </div>
         </>
     )

@@ -18,7 +18,7 @@ export default function FavoriteSongs() {
         <div className='container-songs'>
             <div className='container-musics'>
                 {favs.map((favs,index)=>(
-                    <div className="container-song">
+                    <div className="container-song" key={index}>
                     <img src={favs.cover} alt={favs.title}/>
                     <div className="favs-fav" >
                         <button type="submit" onClick={() => Delete(index)}><img src={favDelete} alt='delete'/></button>
@@ -29,8 +29,7 @@ export default function FavoriteSongs() {
                         </div>
                     </a>
                     <h1>{favs.title}</h1>
-                    <h2>by {favs.artist}</h2>
-                    <h3>Duration {favs.duration}</h3>       
+                    <h2>by {favs.artist}</h2>       
                 </div>
                 ))}
                 {favs.length<= 0 &&
