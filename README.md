@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img align="center" width="300px" src="./src/assets/images/deezer_home.png" alt="Deezer" />
+  <img align="center" src="./src/assets/images/deezer_home.png" alt="Deezer" />
 
 &#xa0;
 </div>
@@ -14,9 +14,11 @@
 
 <br>
 
-## :dart: About ##
+## :dart: Sobre ##
 
-Projeto Deezer
+Projeto de um player de música feito para o processo seletivo da Manipulaê consumindo a API do deezer.
+O site é totalmente responsivo para dispisitivos mobile.
+Site desenvolvido durante 6 dias.
 
 ## :rocket: Tecnologias ##
 
