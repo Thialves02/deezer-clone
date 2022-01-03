@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img align="center" width="300px" src="https://gartic.com.br/imgs/mural/_v/_vorreipace_/ilha.png" alt="The_Island" />
+  <img align="center" width="300px" src="./src/assets/images/deezer_home.png" alt="Deezer" />
 
 &#xa0;
 </div>
@@ -7,9 +7,9 @@
 <h1 align="center">Projeto Deezer</h1>
 
 <p align="center">
-  <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/Thialves02/The_island?color=56BEB8">
+  <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/Thialves02/deezer-clone?color=56BEB8">
 
-  <img alt="Quantidade de linguagens utilizadas" src="https://img.shields.io/github/languages/count/Thialves02/The_island?color=56BEB8">
+  <img alt="Quantidade de linguagens utilizadas" src="https://img.shields.io/github/languages/count/Thialves02/deezer-clone?color=56BEB8">
 </p>
 
 <br>
