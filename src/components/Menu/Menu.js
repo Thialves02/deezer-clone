@@ -5,6 +5,7 @@ import { Context } from "../../context/CtxApp"
 import Promo from '../Promo/Promo'
 import { Link, useHistory } from 'react-router-dom'
 import './LateralMenu.css'
+import './FooterMenu.css'
 import menu from '../../assets/images/menu.png'
 import logoTop from '../../assets/images/logoTop.png'
 import logo from '../../assets/images/logo.png'
@@ -12,7 +13,7 @@ import fav from '../../assets/images/favDelete.png'
 import searchSong from '../../assets/images/search.png'
 
 export default function Menu() {
-    const { setSongs } = useContext(Context)
+    const { setSongs,current } = useContext(Context)
     const [open, setOpen ] = useState(false)
     const history = useHistory()
     
@@ -36,7 +37,6 @@ export default function Menu() {
             const body = await response.json()
             setSongs(body.data)
         }
-        
     }
 
     const Menu = () =>{
@@ -73,6 +73,14 @@ export default function Menu() {
                 <div className='Menu-infos'>           
                     <img src={menu} className='menu' onClick={Menu} alt='menu'/>
                 </div>
+            </div>
+            <div className='Menu-Footer'>
+                {current.length !=0 &&
+                    <>
+                    <img src={current.cover}/>
+                    <h1>{current.title}</h1>
+                    </>
+                }   
             </div>
         </div>
     )
